@@ -8,6 +8,10 @@ The main feature of this sketch is the output of a "kickstart" pulse when trying
 
 The source code also includes a `#define LOGGING 1` line which enables output on the Arduino's Serial port, which can be monitored with the IDE's "Serial Monitor" or "Serial Plotter" tools during the tuning process.  Changing the LOGGING symbol from 1 to 0 will disable this output for actual use of the throttle.
 
+### Disclaimer
+
+At this time, I have not tested this code with an actual motor connected.  I welcome any feedback from users who actually try this code with real train hardware.
+
 ### Dependencies
 
 This sketch requires my *StateMachine* library, available from GitHub here.
