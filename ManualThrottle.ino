@@ -157,19 +157,13 @@ class Throttle : public StateMachine {
         analogWrite(m_analogOut, analogOut);
         
 #if LOGGING
-        // Input is 10-bit value and output is 8-bit value,
-        // so scale both to between 0.0 and 1.0.
-        // First value switches between 0.4, 0.5, 0.6 based on current state.
-        // Second and third values keep Serial Plotter from rescaling.
-        Serial.print((int) m_state * 0.1 + 0.4);
+        Serial.print(0);
         Serial.print(' ');
-        Serial.print(0.0);
+        Serial.print(PWM_MAX);
         Serial.print(' ');
-        Serial.print(1.0);
+        Serial.print((float) analogIn / 4.0);
         Serial.print(' ');
-        Serial.print((float) analogIn / (float) ADC_MAX, 4);
-        Serial.print(' ');
-        Serial.println((float) analogOut / (float) PWM_MAX, 4);
+        Serial.println(analogOut);
 #endif
         
         // Has updated.
